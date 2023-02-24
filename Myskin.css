@@ -51,7 +51,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
+    gap: 60px 5px;
     margin-bottom: 4rem;
     font-size: 16px;
     font-weight: bold;
