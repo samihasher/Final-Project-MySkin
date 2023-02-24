@@ -61,6 +61,11 @@ body{
     list-style-type: none;
 }
 
+#product-image{
+    display: flex;
+    align-self: center;
+}
+
 #product-card{
     background-color: #8EB18A;
     min-width: 300px;
@@ -82,8 +87,8 @@ body{
   }
 
 @media  screen and (max-width:673px) {
-    #product-card {justify-content: center;} 
-    #product-image {text-align: center;}
+    #product-card {justify-content: space-around;} 
+    #product-image {align-self: center;}
 }
 
 /**footer section**/
@@ -105,6 +110,10 @@ body{
     font-size: 20 px;
     color: white;
     margin-right: 15%;
+}
+
+#ig-logo{
+    padding: 2%;
 }
 
 @media only screen and (min-width:481px) and (max-width: 915px) {
