@@ -70,9 +70,6 @@ body{
     flex-basis: 22%;
 }
 
-/* #product-info{
-    padding: 2%; 
-} */
 
 #product{
     margin-left: 30%;
@@ -83,10 +80,7 @@ body{
       flex-basis: calc(33.33%-20px);
     }
   }
-@media  screen and (max-width:673px) {
-    #product-card {justify-content: center;} 
-    #product-image {text-align: center;}
-}
+
 
 /**footer section**/
 #footer-section{
