@@ -81,6 +81,10 @@ body{
     }
   }
 
+@media  screen and (max-width:673px) {
+    #product-card {justify-content: center;} 
+    #product-image {text-align: center;}
+}
 
 /**footer section**/
 #footer-section{
