@@ -54,6 +54,11 @@ body{
     margin: 2rem;
     font-size: 16px;
 }
+
+#pl-info{
+    list-style-type: none;
+}
+
 #product-card{
     background-color: #8EB18A;
     min-width: 400px;
@@ -68,7 +73,7 @@ body{
 }
 
 #product{
-    margin-left: 20%;
+    margin-left: 30%;
 }
 
 /* @media only screen and (max-width: 1280px) {
