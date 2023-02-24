@@ -5,7 +5,7 @@ body{
 
 /**nav bar**/
 #navbar-section {
-    background-color: red;
+    background-color: #734B5E;
     display: flex;
     justify-content: space-between;
     align-items: center;
