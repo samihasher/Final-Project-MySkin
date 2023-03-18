@@ -26,34 +26,48 @@ Overall, MySkin is an essential tool for anyone looking to improve their skincar
 
 * Figma Link (https://www.figma.com/file/OwtktAvKyT0vFTXuiNegFo/Main-pages---Final-Project?node-id=0%3A1&t=XdvpJvIGsUe54nj7-1)
 
+## FS1030
+
 **Entity Relationship Model**
+
 **Mission Statement of Database:**
+
 The purpose of the MySkin database is to track skincare routines and product experiences for users to develop their skincare routine.
 
 **Mission Objective**
+
 * Track skincare products usage
 * Build a skincare routine
 * Review and document skincare products and experiences
 * Swap out old products for new ones
 
 **Entity Relationship Model:**
+
 Entities:
+
 * User (infinite)
 * Routine (two types)
 * Products
 * Brands
 * Reviews
 
+Relationships:
+
 * Users may have one or more routines, Routines must belong to one and only one user
 * Routines must contain one or more product, products must be added to one or more routines
 * Products must have one and only one brand, brands may have one or more products
 * Products may have one and only one review, reviews must belong to one and only one product
 
-* Relational Model:**
+**Relational Model:**
+
 User(**user_ID**, password, email_address)
+
 Routines(**routine_ID**, userID(fk), routine_type, routine_name, routine description)
+
 Product(**product_ID**, brandID(fk), product_name, product_type, product_imagetype)
+
 Review(**review_ID**, productID(fk), userID(fk), review_rating, review_description)
+
 Brand(**brand_ID**, brand_name, brand_image)
 
 
