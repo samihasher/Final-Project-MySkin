@@ -35,3 +35,8 @@ review_description MEDIUMTEXT
 );
 
 show tables;
+create table blogs (
+blog_id int,
+blog_name varchar(255),
+blog_description longtext
+);
