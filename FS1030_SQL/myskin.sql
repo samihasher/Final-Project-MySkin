@@ -139,3 +139,25 @@ WHERE routines.routine_name = 'Morning Rush';
 SELECT products.product_name, brands.brand_name
 FROM products
 JOIN brands ON products.brand_id = brands.brand_id;
+
+
+SELECT * FROM products
+ORDER BY price ASC;
+
+describe routines;
+select * from routines;
+describe users;
+select * from users;
+
+ALTER TABLE routines
+ADD CONSTRAINT fk_routine_users
+FOREIGN KEY (user_id) REFERENCES users(user_id)
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+SHOW ENGINE INNODB STATUS;
+
+
+
+
+
+
