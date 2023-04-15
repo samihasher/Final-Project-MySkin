@@ -129,26 +129,15 @@ UPDATE brands set is_deleted = 1 where brand_id = 3;
 select * from brands;
 select * from products;
 
-
-ALTER TABLE products ADD COLUMN brand_id INT NOT NULL;
-
-ALTER TABLE products ADD CONSTRAINT fk_products_brands
-FOREIGN KEY (brand_id) REFERENCES brands(brand_id)
-ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE products MODIFY brand_id INT DEFAULT 0 NOT NULL;
-
 UPDATE products 
 SET price = 
-    CASE 
+    CASE
         WHEN product_id = 7 THEN 30.00 
         WHEN product_id = 8 THEN 20.99 
         WHEN product_id = 9 THEN 45.00 
         WHEN product_id = 10 THEN 18.99 
     END
 WHERE product_id IN (7, 8, 9, 10);
-
-
 SELECT * 
 FROM products 
 WHERE price = (SELECT MAX(price) FROM products);
@@ -176,13 +165,41 @@ select * from users;
 
 ALTER TABLE routines
 ADD CONSTRAINT fk_routine_users
-FOREIGN KEY (user_id) REFERENCES users(user_id)
+FOREIGN KEY (user_id) REFERENCES users(user_id);
+
+describe routines;
+
+ALTER TABLE products ADD COLUMN brand_id INT NOT NULL;
+select * from products;
+select * from brands;
+
+ALTER TABLE products ADD CONSTRAINT fk_products_brands
+FOREIGN KEY (brand_id) REFERENCES brands(brand_id)
 ON DELETE CASCADE ON UPDATE CASCADE;
 
-SHOW ENGINE INNODB STATUS;
+alter table Reviews add column product_id INT NOT NULL;
+alter table Reviews add column user_id INT NOT NULL;
 
+select * from Reviews;
+select * from users;
 
+UPDATE `myskin_finalproject`.`Reviews` SET `product_id` = '7', `user_id` = '1' WHERE (`review_id` = '11');
+UPDATE `myskin_finalproject`.`Reviews` SET `product_id` = '8', `user_id` = '2' WHERE (`review_id` = '12');
+UPDATE `myskin_finalproject`.`Reviews` SET `product_id` = '9', `user_id` = '3' WHERE (`review_id` = '13');
+UPDATE `myskin_finalproject`.`Reviews` SET `product_id` = '10', `user_id` = '5' WHERE (`review_id` = '14');
 
+select * from Reviews;
+select * from products;
 
+DELETE FROM `myskin_finalproject`.`Reviews` WHERE (`review_id` = '15');
+DELETE FROM `myskin_finalproject`.`Reviews` WHERE (`review_id` = '16');
 
+select * from Reviews;
 
+ALTER TABLE Reviews 
+ADD CONSTRAINT FK_Reviews_Products 
+FOREIGN KEY (product_id) REFERENCES products(product_id),
+ADD CONSTRAINT FK_Reviews_Users 
+FOREIGN KEY (user_id) REFERENCES users(user_id);
+
+describe Reviews;
