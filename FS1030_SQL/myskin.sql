@@ -67,12 +67,12 @@ VALUES
 (5, 'Farmacy', 'img5', 1),
 (6, 'Joseon', 'img6', 1);
 
-insert into products (product_id, product_name, product_type, product_image, is_active)
+insert into products (product_id, product_name, product_type, product_image, price, is_active)
 VALUES
-(7, 'Rice Wash', 'cleanser', 'img7', 1),
-(8, 'Glow Toner', 'toner', 'img8', 1),
-(9, 'Honey Drop', 'Moisturizer', 'img9', 1),
-(10, 'Glow Serum', 'Serum', 'img10', 1);
+(7, 'Rice Wash', 'cleanser', 'img7', 10.99, 1),
+(8, 'Glow Toner', 'toner', 'img8', 20.99, 1),
+(9, 'Honey Drop', 'Moisturizer', 'img9', 30.00, 1),
+(10, 'Glow Serum', 'Serum', 'img10', 42.99, 1);
 
 INSERT INTO routines (routine_ID, routine_type, routine_name)
 VALUES ('routine001', 'AM1', 'Morning Rush'),
@@ -102,7 +102,40 @@ update blogs set blog_name = 'The 10 Hottest Brands' WHERE blog_id = 19;
 UPDATE brands set is_deleted = 1 where brand_id = 3;
 
 select * from brands;
+select * from products;
 
 
+ALTER TABLE products ADD COLUMN brand_id INT NOT NULL;
+
+ALTER TABLE products ADD CONSTRAINT fk_products_brands
+FOREIGN KEY (brand_id) REFERENCES brands(brand_id)
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE products MODIFY brand_id INT DEFAULT 0 NOT NULL;
+
+UPDATE products 
+SET price = 
+    CASE 
+        WHEN product_id = 7 THEN 30.00 
+        WHEN product_id = 8 THEN 20.99 
+        WHEN product_id = 9 THEN 45.00 
+        WHEN product_id = 10 THEN 18.99 
+    END
+WHERE product_id IN (7, 8, 9, 10);
 
 
+SELECT * 
+FROM products 
+WHERE price = (SELECT MAX(price) FROM products);
+
+ALTER TABLE products MODIFY brand_id INT DEFAULT 0 NOT NULL;
+SELECT * FROM products;
+
+SELECT routines.routine_name, products.product_name
+FROM routines
+JOIN products ON routines.routine_ID = products.product_id
+WHERE routines.routine_name = 'Morning Rush';
+
+SELECT products.product_name, brands.brand_name
+FROM products
+JOIN brands ON products.brand_id = brands.brand_id;
