@@ -71,7 +71,4 @@ Review(**review_ID**, productID(fk), userID(fk), review_rating, review_descripti
 Brand(**brand_ID**, brand_name, brand_image)
 
 
-![AssignmentFS1030 drawio (2)](https://user-images.githubusercontent.com/122646965/226135435-0bb9f5a2-03ab-49db-bb16-ce3ac092504e.png)
-https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1#G1i27ABHGEj2CHIR1qOyuW-objOT598kT_
-
-https://drive.google.com/file/d/1i27ABHGEj2CHIR1qOyuW-objOT598kT_/view?usp=sharing
+![AssignmentFS1030 drawio (3)](https://user-images.githubusercontent.com/122646965/232187381-de7dc5fb-53b6-4238-a9b3-6508c0654b96.png)
