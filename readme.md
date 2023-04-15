@@ -72,3 +72,5 @@ Brand(**brand_ID**, brand_name, brand_image)
 
 
 ![AssignmentFS1030 drawio (2)](https://user-images.githubusercontent.com/122646965/226135435-0bb9f5a2-03ab-49db-bb16-ce3ac092504e.png)
+
+https://drive.google.com/file/d/1i27ABHGEj2CHIR1qOyuW-objOT598kT_/view?usp=sharing
